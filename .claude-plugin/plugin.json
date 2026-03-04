@@ -1,0 +1,11 @@
+{
+  "name": "jam-skills",
+  "version": "1.0.0",
+  "description": "AI-powered marketing and SEO skills from JAM - the distribution platform for founders",
+  "author": "JAM (spreadjam.com)",
+  "homepage": "https://spreadjam.com",
+  "repository": "https://github.com/wespreadjam/jam-skills",
+  "skills": [
+    "skills/geo-optimize"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "jam-skills",
+  "version": "1.0.0",
+  "description": "Claude Code skills for AI-powered marketing and SEO from JAM",
+  "author": "JAM <hello@spreadjam.com>",
+  "license": "MIT",
+  "homepage": "https://spreadjam.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wespreadjam/jam-skills.git"
+  },
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "skills",
+    "geo",
+    "seo",
+    "ai-search",
+    "marketing",
+    "chatgpt",
+    "perplexity"
+  ]
+}
