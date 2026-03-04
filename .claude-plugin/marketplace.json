@@ -1,12 +1,12 @@
 {
-  "name": "jam-skills",
+  "name": "jam-marketplace",
   "owner": {
     "name": "JAM",
     "url": "https://spreadjam.com"
   },
   "plugins": [
     {
-      "name": "jam-skills",
+      "name": "geo-optimize",
       "source": {
         "source": "github",
         "repo": "wespreadjam/jam-skills",
