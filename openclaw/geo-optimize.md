@@ -1,8 +1,8 @@
 ---
 name: geo-optimize
-description: Optimize content for AI search citations using keyword intelligence and proven GEO tactics
+description: Expert GEO analysis with competitive benchmarking and ready-to-use content generation
 author: JAM
-version: 1.0.0
+version: 2.0.0
 tags:
   - seo
   - geo
@@ -11,87 +11,84 @@ tags:
   - optimization
 ---
 
-# GEO Optimize
+# GEO Optimize - Expert Analysis
 
-Optimize content to get cited by AI search engines (ChatGPT, Perplexity, Claude, Google AI Overview).
+Deep competitive analysis for AI search optimization. Generates specific, actionable recommendations with ready-to-use FAQ content, answer capsules, and comparison tables.
 
-## Usage
+## Workflow
 
-Works with or without a URL:
-- With URL: Fetches live keyword data and SEO audit
-- Without URL: Analyzes local codebase files
+### Step 1: Get Intelligence
 
-## Instructions
-
-### 1. Gather Context
-
-**If user provides URL + keyword:**
 ```bash
 curl -X POST https://spreadjam.com/api/geo/analyze \
   -H "Content-Type: application/json" \
-  -d '{"url": "URL", "targetKeyword": "KEYWORD", "includePrompt": "full", "targetPlatforms": ["chatgpt", "perplexity", "claude", "google-ai"]}'
+  -d '{"url": "URL", "targetKeyword": "KEYWORD", "includePrompt": "none"}'
 ```
 
-**If no URL:** Analyze local files for meta tags, headings, content structure.
+Extract: `paaQuestions[]`, `keywordIdeas[]`, `competitorPages[]`, `keywords.primary`
 
-**If no keyword:** Ask user or infer from page content/package.json.
+### Step 2: Analyze Target Page
 
-### 2. Interpret Keyword Data
+Fetch target URL. Identify:
+- H1, H2, H3 structure
+- FAQ section (count questions)
+- Comparison tables (present?)
+- Statistics cited
+- First paragraph length (40-60 words = good answer capsule)
 
-From the API response, use:
+### Step 3: Analyze 3 Competitors
 
-- **searchIntent**:
-  - `informational` → Create guides, FAQs, how-tos
-  - `commercial` → Add comparison tables, pros/cons
-  - `transactional` → Clear CTAs, pricing, trust signals
+For each competitor domain, fetch and extract:
+- Their H2 topics
+- Their FAQ questions
+- Their content structure
 
-- **keywordDifficulty**:
-  - 0-30: Can rank with solid content
-  - 31-60: Need depth and authority signals
-  - 61+: Target long-tail variants first
+Build comparison:
+| Element | Target | Comp 1 | Comp 2 | Comp 3 |
+|---------|--------|--------|--------|--------|
+| FAQ Qs | 0 | 8 | 5 | 10 |
 
-- **competitors[]**: Study what top-ranking pages have
+### Step 4: Generate Specific Recommendations
 
-### 3. Apply GEO Tactics
+Output must include:
 
-**FAQ Schema (+156% citations)**
-Add structured data with questions based on target keyword:
-```json
-{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "...", "acceptedAnswer": {...}}]}
+1. **Gap Analysis Table** - Your page vs competitors with impact numbers
+2. **Missing Topics** - H2s competitors have that you don't
+3. **Generated FAQ** - 5 questions with 50-word answers (ready to copy)
+4. **Answer Capsule** - 40-60 word direct answer (ready to copy)
+5. **Schema Markup** - FAQPage JSON-LD (ready to copy)
+6. **Implementation Checklist** - Prioritized by impact
+
+## Key Numbers
+
+- FAQ Schema: +156% citations
+- Comparison Tables: +112% citations
+- Statistics with Sources: +40% citations
+- Answer Capsule: 40-60 words optimal
+- Content Freshness: <60 days recommended
+
+## Output Example
+
 ```
+## GEO Analysis: [url]
 
-**Comparison Tables (+112% citations)**
-For commercial intent, add tables comparing options.
+### Critical Gaps
+| Gap | You | Competitors | Impact |
+|-----|-----|-------------|--------|
+| FAQ | 0 | 7.6 avg | +156% |
 
-**Statistics with Sources (+40% citations)**
-Include specific numbers with credible citations (2024-2026 sources).
+### Generated FAQ (Ready to Copy)
+**Q: What is [keyword]?**
+A: [50-word answer]
 
-**Answer Capsules**
-Create 40-60 word blocks that directly answer the target query. Place in first 30% of content (Ski Ramp Effect).
+### Answer Capsule (Ready to Copy)
+> [40-60 word direct answer]
 
-**Heading Structure**
+### Implementation Checklist
+- [ ] Add 5 FAQ questions (+156%)
+- [ ] Add answer capsule
+- [ ] Add comparison table (+112%)
 ```
-# [Keyword]: [Value Prop]
-## What is [Keyword]?
-## How [Keyword] Works
-## [Keyword] vs [Alternative]
-## FAQ
-```
-
-### 4. Platform-Specific
-
-- **ChatGPT** (Bing): Strong meta descriptions, direct answers first
-- **Perplexity** (Reddit): Community-style, address real pain points
-- **Claude** (Brave): Authoritative, well-sourced, technical depth
-- **Google AI**: E-E-A-T signals, comprehensive coverage
-
-### 5. Implement
-
-Don't just report - edit the files:
-- Update meta tags in layout/head
-- Add FAQ schema
-- Restructure headings
-- Add comparison tables and statistics
 
 ## Rate Limits
 
