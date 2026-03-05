@@ -1,6 +1,6 @@
 {
   "name": "geo-optimize",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "GEO optimization for AI search citations - optimize content for ChatGPT, Perplexity, Claude, and Google AI",
   "author": {
     "name": "JAM",
