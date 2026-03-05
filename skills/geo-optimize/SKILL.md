@@ -22,7 +22,7 @@ Follow this 4-step workflow to provide expert-level GEO analysis:
 Call the JAM GEO API to get keyword data, PAA questions, and competitor info:
 
 ```bash
-curl -X POST https://spreadjam.com/api/geo/analyze \
+curl -X POST https://www.spreadjam.com/api/geo/analyze \
   -H "Content-Type: application/json" \
   -d '{
     "url": "<TARGET_URL>",

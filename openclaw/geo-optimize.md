@@ -2,7 +2,7 @@
 name: geo-optimize
 description: Expert GEO analysis with competitive benchmarking and ready-to-use content generation
 author: JAM
-version: 2.0.0
+version: 2.0.1
 tags:
   - seo
   - geo
@@ -20,7 +20,7 @@ Deep competitive analysis for AI search optimization. Generates specific, action
 ### Step 1: Get Intelligence
 
 ```bash
-curl -X POST https://spreadjam.com/api/geo/analyze \
+curl -X POST https://www.spreadjam.com/api/geo/analyze \
   -H "Content-Type: application/json" \
   -d '{"url": "URL", "targetKeyword": "KEYWORD", "includePrompt": "none"}'
 ```
